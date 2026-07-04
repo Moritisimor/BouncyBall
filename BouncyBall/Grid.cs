@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace BouncyBall;
 
 public class Grid
@@ -30,30 +32,31 @@ public class Grid
 
     public string Draw()
     {
-        var buf = "";
-        foreach (var _ in Enumerable.Range(0, _width + 1))
+        var builder = new StringBuilder();
+        foreach (var _ in Enumerable.Range(0, _width + 2))
         {
-            buf += "-";
+            builder.Append('-');
         }
 
-        buf += "\n";
+        builder.Append('\n');
         foreach (var row in _internalGrid)
         {
-            buf += "|";
+            builder.Append('|');
             foreach (var cell in row)
             {
-                buf += cell ? "O" : " ";
+                builder.Append(cell ? 'O' : ' ');
             }
 
-            buf += "|\n";
+            builder.Append('|');
+            builder.Append('\n');
         }
 
-        foreach (var _ in Enumerable.Range(0, _width + 1))
+        foreach (var _ in Enumerable.Range(0, _width + 2))
         {
-            buf += "-";
+            builder.Append('-');
         }
 
-        return buf;
+        return builder.ToString();
     }
 
     public void Update()
