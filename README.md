@@ -1,6 +1,8 @@
 # BouncyBall
 Simple Terminal Application for making a Ball bounce across your screen
 
+![Demo Gif](gifs/demo.gif)
+
 ## What is this project about?
 BouncyBall is, as the name may suggest, an application for making a ball bounce across your screen.
 
