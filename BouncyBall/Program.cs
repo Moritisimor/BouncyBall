@@ -1,6 +1,17 @@
 ﻿using BouncyBall;
 
-var flags = new Flags(args);
+Flags flags;
+try
+{
+    flags = new Flags(args);
+}
+catch (FlagParseException e)
+{
+    Console.WriteLine(e.Message);
+    Environment.Exit(1);
+    return;
+}
+
 var grid = new Grid(flags.Width, flags.Height);
 var iter = 0;
 
