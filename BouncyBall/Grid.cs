@@ -72,18 +72,15 @@ public class Grid
         {
             CornerHits++;
         }
-
-        if (BallY == _height - 1 && BallX == _width - 1) // Bottom right corner
+        else if (BallY == _height - 1 && BallX == _width - 1) // Bottom right corner
         {
             CornerHits++;
         }
-
-        if (BallY == _height - 1 && BallX == 0) // Bottom left corner
+        else if (BallY == _height - 1 && BallX == 0) // Bottom left corner
         {
             CornerHits++;
         }
-
-        if (BallY == 0 && BallX == _width - 1)
+        else if (BallY == 0 && BallX == _width - 1) // Top right corner
         {
             CornerHits++;
         }

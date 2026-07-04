@@ -35,7 +35,7 @@ You can simply launch the program as-is like this:
 BouncyBall
 ```
 
-By default, the height is 45, the Width is 100 and the Update Rate is 50ms.
+By default, the height is 45, the Width is 100 and the Update Rate is 10ms.
 
 To set these values yourself, you can use these flags:
 - --height / -h
