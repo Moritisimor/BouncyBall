@@ -8,8 +8,10 @@ public class Grid
     private bool _movingUp;
     private bool _movingRight;
     
-    public int BallX;
-    public int BallY;
+    public int BallX { get; private set; }
+    public int BallY { get; private set; }
+    
+    public int CornerHits { get; private set; }
     
     private readonly int _width;
     private readonly int _height;
@@ -18,6 +20,8 @@ public class Grid
     {
         BallY = 0;
         BallX = 0;
+        CornerHits = -1; // Starts at -1 because the first hit is the initial position of the ball.
+        
         _movingUp = false;
         _movingRight = true;
 
@@ -64,6 +68,26 @@ public class Grid
         var oldY = BallY;
         var oldX = BallX;
 
+        if (BallY == 0 && BallX == 0) // Top left corner
+        {
+            CornerHits++;
+        }
+
+        if (BallY == _height - 1 && BallX == _width - 1) // Bottom right corner
+        {
+            CornerHits++;
+        }
+
+        if (BallY == _height - 1 && BallX == 0) // Bottom left corner
+        {
+            CornerHits++;
+        }
+
+        if (BallY == 0 && BallX == _width - 1)
+        {
+            CornerHits++;
+        }
+        
         if (BallY == 0)
         {
             _movingUp = false;

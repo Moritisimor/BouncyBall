@@ -1,4 +1,5 @@
-﻿using BouncyBall;
+﻿using System.Text;
+using BouncyBall;
 
 Flags flags;
 try
@@ -17,8 +18,15 @@ var iter = 0;
 
 while (true)
 {
+    var builder = new StringBuilder();
+    builder.Append($"X: {grid.BallX} Y: {grid.BallY} Corner hits: {grid.CornerHits}\n");
+    builder.Append($"Iteration: {iter}\n");
+    
     grid.Update();
-    Console.WriteLine($"\e[H\e[2J\e[3J\nIteration: {iter}\nX: {grid.BallX}, Y: {grid.BallY}\n{grid.Draw()}");
+    builder.Append(grid.Draw());
+    
+    Console.WriteLine("\e[H\e[2J\e[3J\n");
+    Console.WriteLine(builder.ToString());
     Thread.Sleep(flags.UpdateRate);
     iter++;
 }
