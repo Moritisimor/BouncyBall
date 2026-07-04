@@ -32,20 +32,27 @@ public class Grid
     {
         List<string> lines = [];
         foreach (var _ in Enumerable.Range(0, _width + 1))
+        {
             lines.Add("-");
+        }
 
         lines.Add("\n");
         foreach (var row in _internalGrid)
         {
             lines.Add("|");
             foreach (var cell in row)
+            {
                 lines.Add(cell ? "X" : " ");
+            }
+
             lines.Add("|\n");
         }
 
         foreach (var _ in Enumerable.Range(0, _width + 1))
+        {
             lines.Add("-");
-        
+        }
+
         return lines;
     }
 
@@ -53,29 +60,45 @@ public class Grid
     {
         var oldY = BallY;
         var oldX = BallX;
-        
+
         if (BallY == 0)
+        {
             _movingUp = false;
+        }
 
         if (BallX == 0)
+        {
             _movingRight = true;
-        
+        }
+
         if (BallX == _width - 1)
+        {
             _movingRight = false;
-        
+        }
+
         if (BallY == _height - 1)
+        {
             _movingUp = true;
+        }
 
         if (_movingUp)
+        {
             BallY--;
+        }
         else
+        {
             BallY++;
-        
+        }
+
         if (_movingRight)
+        {
             BallX++;
+        }
         else
+        {
             BallX--;
-        
+        }
+
         _internalGrid[oldY][oldX] = false;
         _internalGrid[BallY][BallX] = true;
     }

@@ -10,8 +10,10 @@ while (true)
     buf += $"X: {grid.BallX}, Y: {grid.BallY}\n";
     grid.Update();
     foreach (var line in grid.Draw())
+    {
         buf += line;
-    
+    }
+
     Console.WriteLine("\e[H\e[2J\e[3J");
     Console.WriteLine(buf);
     Thread.Sleep(10);
