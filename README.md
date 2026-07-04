@@ -30,7 +30,7 @@ dotnet publish -p:PublishAot=true
 ## Usage
 You can simply launch the program as-is like this:
 ```bash
-bouncyball
+BouncyBall
 ```
 
 By default, the height is 45, the Width is 100 and the Update Rate is 50ms.
