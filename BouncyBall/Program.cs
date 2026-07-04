@@ -1,6 +1,7 @@
 ﻿using BouncyBall;
 
-var grid = new Grid();
+var flags = new Flags(args);
+var grid = new Grid(flags.Width, flags.Height);
 var iter = 0;
 
 while (true)
@@ -16,6 +17,6 @@ while (true)
 
     Console.WriteLine("\e[H\e[2J\e[3J");
     Console.WriteLine(buf);
-    Thread.Sleep(10);
+    Thread.Sleep(flags.UpdateRate);
     iter++;
 }
