@@ -29,6 +29,11 @@ Or if you want to compile the program to a native executable:
 dotnet publish -p:PublishAot=true
 ```
 
+You can also just run it right now like this:
+```bash
+dotnet run
+```
+
 ## Usage
 You can simply launch the program as-is like this:
 ```bash
