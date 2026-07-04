@@ -42,7 +42,7 @@ public class Grid
             lines.Add("|");
             foreach (var cell in row)
             {
-                lines.Add(cell ? "X" : " ");
+                lines.Add(cell ? "O" : " ");
             }
 
             lines.Add("|\n");
