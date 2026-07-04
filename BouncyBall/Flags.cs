@@ -33,9 +33,9 @@ public class Flags
                     throw new FlagParseException("Height value must be an integer");
                 }
 
-                if (Height < 1)
+                if (Height < 2)
                 {
-                    throw new FlagParseException("Height must be greater than 0");
+                    throw new FlagParseException("Height must be greater than 1");
                 }
             }
 
@@ -56,9 +56,9 @@ public class Flags
                     throw new FlagParseException("Width value must be an integer");
                 }
                 
-                if (Width < 1)
+                if (Width < 2)
                 {
-                    throw new FlagParseException("Width must be greater than 0");
+                    throw new FlagParseException("Width must be greater than 1");
                 }
             }
 

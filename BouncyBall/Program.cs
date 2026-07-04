@@ -7,7 +7,7 @@ try
 }
 catch (FlagParseException e)
 {
-    Console.WriteLine(e.Message);
+    Console.WriteLine($"Error while parsing flags: {e.Message}");
     Environment.Exit(1);
     return;
 }
