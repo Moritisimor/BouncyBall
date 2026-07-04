@@ -28,32 +28,32 @@ public class Grid
         }
     }
 
-    public List<string> Draw()
+    public string Draw()
     {
-        List<string> lines = [];
+        var buf = "";
         foreach (var _ in Enumerable.Range(0, _width + 1))
         {
-            lines.Add("-");
+            buf += "-";
         }
 
-        lines.Add("\n");
+        buf += "\n";
         foreach (var row in _internalGrid)
         {
-            lines.Add("|");
+            buf += "|";
             foreach (var cell in row)
             {
-                lines.Add(cell ? "O" : " ");
+                buf += cell ? "O" : " ";
             }
 
-            lines.Add("|\n");
+            buf += "|\n";
         }
 
         foreach (var _ in Enumerable.Range(0, _width + 1))
         {
-            lines.Add("-");
+            buf += "-";
         }
 
-        return lines;
+        return buf;
     }
 
     public void Update()
