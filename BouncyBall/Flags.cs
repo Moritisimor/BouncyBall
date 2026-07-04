@@ -12,7 +12,7 @@ public class Flags
     {
         Height = 45;
         Width = 100;
-        UpdateRate = 50;
+        UpdateRate = 10;
 
         foreach (var arg in args)
         {
