@@ -24,6 +24,7 @@ while (true)
     
     grid.Update();
     builder.Append(grid.Draw());
+    builder.Append("\nPress Ctrl + C to exit!");
     
     Console.WriteLine("\e[H\e[2J\e[3J\n");
     Console.WriteLine(builder.ToString());
